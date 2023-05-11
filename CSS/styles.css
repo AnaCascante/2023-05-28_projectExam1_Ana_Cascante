@@ -1,0 +1,58 @@
+body {
+    margin:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+}
+
+h1 {
+    color: rgb(32, 109, 62); 
+    font-size: 50px;
+}
+
+.details-punchline{
+    color: rgb(28, 16, 162); 
+}
+
+.details-type {
+
+}
+
+button {
+    color: rgb(188, 34, 52)
+}
+
+.showhideBtn {
+    font-size:1rem;
+}
+
+.results{
+    margin:auto;
+    background: white;
+    color: white;
+}
+
+.nav {
+    background-color: gainsboro;
+    font-size: 40px;
+    padding: 20px;
+}
+.mainpage, .singeljoke {
+    padding: 50px;
+    color:rgb(32, 109, 62)
+}
+
+.generalBtn, .programmingBtn, .knockknockBtn {
+    margin:10px 40px;
+}
+
+.result-type {
+    font-size: 20px;
+}
+
+hr {
+    width: auto;
+    top: 20px;
+    border: none;
+    height: 12px;
+    background:rgb(32, 109, 62) ;
+    margin-bottom: 50px;
+}
