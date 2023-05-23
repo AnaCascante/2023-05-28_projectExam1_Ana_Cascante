@@ -1,4 +1,23 @@
-const url = "https://api.noroff.dev/api/v1/jokes";
+fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=home?', {
+    headers: {
+        Authorization: 'Basic {Goodfoodgoodmood}:{1UNy B2ea D7mq 3gqM hy4j TzyR}'
+    }
+})
+    .then (response =>response.json())
+    .then (data => {
+        const homeContent= document.getElementById ('home-content'); 
+        homeContent.innerHTML = data [0].content.rendered; 
+    })
+    .catch (error =>{
+        console.log ('Error:', error);
+    })
+
+/* js for the index page */
+
+fetch ()
+
+
+/*const url = "https://api.noroff.dev/api/v1/jokes";
 const jokesContainer = document.querySelector(".jokes");
 
 //Filter buttons - the assigment didn't ask for filtering knockknock //
@@ -33,6 +52,6 @@ async function getJokes(url, joketype){
 };
 
 getJokes(url, "programming");
-
+*/
 
 

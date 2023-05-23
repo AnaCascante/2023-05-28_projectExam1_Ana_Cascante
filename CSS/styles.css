@@ -1,11 +1,27 @@
+/* fontfamily information from google fonts. 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=PT+Sans&family=Work+Sans&display=swap');
+</style>
+font-family: 'Fira Sans', sans-serif; - for titles 
+font-family: 'PT Sans', sans-serif;  for paragraf
+font-family: 'Work Sans', sans-serif; - for h2 and under
+*/
+
+
 body {
     margin:0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    background-color: #87b78fa1;
 }
 
 h1 {
-    color: rgb(32, 109, 62); 
+    color: #0000; 
     font-size: 50px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+p {
+    font-family: 'PT Sans', sans-serif; 
+    color: #0000; 
 }
 
 .details-punchline{
