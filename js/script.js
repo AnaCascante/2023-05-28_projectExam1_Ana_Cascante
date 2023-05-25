@@ -12,10 +12,54 @@ fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=ho
         console.log ('Error:', error);
     })
 
-/* js for the index page */
+/* js for the index page */ 
+/*exempel of code to get an element from rest api */
 
-fetch ()
+const nameBtn = document.getElementById ("name in html")
+const nameContainer = document.getElementById ("name in html")
 
+
+/* make an if- in case the btn is not in all the pages */
+
+if (nameBtn){
+    nameBtn.addEventListener ("click",function () {
+        const myRequest = newHTMLRequest (); 
+        myRequest.open ('GET', '{baseurl}/wp-json/wp/v2/base-route');
+
+/* to get the post by categories- tape posts?categories = 68 for desserts- 69 for dinner or 70 for breakfast  */ 
+
+        myRequest.onload = function (){
+            if (myRequest.status >= 200 && myRequest.status < 400){
+                const data = JSON.parse (myRequest.responseText);
+                createHTML (data);
+            }         else {
+                console.log ("something went wrong!");
+            }
+        };
+        myRequest.onerror = function (){
+            console.log ("connection Error");
+        };
+        myRequest.send ();
+
+    });
+}
+
+/*convert the data to be readeble in html*/
+
+function createHTML (postdata){
+    const myHTMLString =''; 
+    for (i=0; i< postsData.lenght; i++){
+        myHTMLString+= '<h2>'+ postsData[i].title.rendered + '</h2>';
+        myHTMLString += postdata[i].content.rendered;
+    }
+    nameContainer.innerHTML = myHTMLString;
+}
+
+
+
+
+
+/*fetch the api for getting the menu */
 
 /*const url = "https://api.noroff.dev/api/v1/jokes";
 const jokesContainer = document.querySelector(".jokes");
