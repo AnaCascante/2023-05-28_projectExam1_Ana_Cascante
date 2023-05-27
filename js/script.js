@@ -1,37 +1,35 @@
-fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=home?', {
-    headers: {
-        Authorization: 'Basic {Goodfoodgoodmood}:{1UNy B2ea D7mq 3gqM hy4j TzyR}'
-    }
-})
-    .then (response =>response.json())
-    .then (data => {
-        const homeContent= document.getElementById ('home-content'); 
-        homeContent.innerHTML = data [0].content.rendered; 
+
+curl -H "Authorization: Bearer 1UNyB2eaD7mq3gqMhy4jTzyR" https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36; 
+
+fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
+    .then(response => response.json())
+    .then(data => {
+        const homePageContent= data[0].content.rendered;
     })
-    .catch (error =>{
-        console.log ('Error:', error);
-    })
+    
 
-/* js for the index page */ 
+/* js for the index page  
 
-
+const nav = document.getElementById (".biglogo")
 
 
+for the logo. 
+"https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/media/248"
 
-/*exempel of code to get an element from rest api */
+/*exempel of code to get an element from rest api 
 
 const nameBtn = document.getElementById ("name in html")
 const nameContainer = document.getElementById ("name in html")
 
 
-/* make an if- in case the btn is not in all the pages */
+/* make an if- in case the btn is not in all the pages 
 
 if (nameBtn){
     nameBtn.addEventListener ("click",function () {
         const myRequest = newHTMLRequest (); 
         myRequest.open ('GET', '{baseurl}/wp-json/wp/v2/base-route');
 
-/* to get the post by categories- tape posts?categories = 68 for desserts- 69 for dinner or 70 for breakfast  */ 
+/* to get the post by categories- tape posts?categories = 68 for desserts- 69 for dinner or 70 for breakfast   
 
         myRequest.onload = function (){
             if (myRequest.status >= 200 && myRequest.status < 400){
@@ -49,7 +47,7 @@ if (nameBtn){
     });
 }
 
-/*convert the data to be readeble in html*/
+/*convert the data to be readeble in html
 
 function createHTML (postdata){
     const myHTMLString =''; 

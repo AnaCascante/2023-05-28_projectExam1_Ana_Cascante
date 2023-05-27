@@ -1,8 +1,8 @@
 fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=posts')
     .then (response =>response.json())
     .then (data => {
-    const recipesContent= document.getElementById ('recipes-content'); /*check this info!!*/
-    recipesContent.innerHTML = data [0].content.rendered; 
+    const recipesPageContent= document.getElementById ('recipes-content'); /*check this info!!*/
+    recipesPageContent.innerHTML = data [0].content.rendered; 
     })
     .catch (error =>{
     console.log ('Error:', error);
@@ -11,9 +11,34 @@ fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=pos
 
 
 
+/*navegate to specific recipe - to get the recipe */
 
+function navegateToPage (pageSlug){
+    const apiUrl ='https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=${pageSlug}';
 
+    fetch (apiUrl)
+        .then (response =>response.json())
+        .then (data => {
+        const pageContent = data[0].content.rendered;
 
+        history.pushState({pageSlug},'/${pageSlug}');
+    });
+}
+
+function handlePageNavigation(){
+    const path = window.location.pathname;
+    const pageSlug = path.substring(1); 
+
+    if("pageSlug ==="){
+        navegateToPage ('home');
+    } else {
+        navegateToPage (pageSlug);
+    }
+}
+
+window.addEventListener ('popstate', handlePageNavigation); 
+
+handlePageNavigation();
 
 
 

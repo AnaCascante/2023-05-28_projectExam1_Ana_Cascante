@@ -1,3 +1,12 @@
+webpage made with wordpress- live. 
+
+https://goodfoodgoodmood.learnbydoing.online/
+
+Your new password for Goodfoodgoodmood is: 
+stel DhUu 6TQ2 Blvc dGNA fKqi
+
+
+
 Information for SSH and FTP- 
 
 To log in with SSH & SFTP, use this info:
