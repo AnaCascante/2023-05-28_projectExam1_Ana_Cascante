@@ -1,4 +1,4 @@
-fetch (/*fetch about page*/)
+fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=about')
     .then (response =>response.json())
     .then (data => {
         const aboutContent= document.getElementById ('about-content'); 

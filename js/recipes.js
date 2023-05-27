@@ -1,5 +1,26 @@
-const url = "https://api.noroff.dev/api/v1/jokes";
-const jokesContainer = document.querySelector(".jokes");
+fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=posts')
+    .then (response =>response.json())
+    .then (data => {
+    const recipesContent= document.getElementById ('recipes-content'); /*check this info!!*/
+    recipesContent.innerHTML = data [0].content.rendered; 
+    })
+    .catch (error =>{
+    console.log ('Error:', error);
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Filter buttons - the assigment didn't ask for filtering knockknock //
 

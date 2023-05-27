@@ -13,6 +13,11 @@ fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=ho
     })
 
 /* js for the index page */ 
+
+
+
+
+
 /*exempel of code to get an element from rest api */
 
 const nameBtn = document.getElementById ("name in html")
