@@ -1,2 +1,6 @@
-get 'https://goodfoodgoodmood.learnbydoing.online/wp-json
-Authorization: Bearer stel DhUu 6TQ2 Blvc dGNA fKqi
+
+
+<!--
+get 'https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/p 
+
+Authorization: Bearer stelDhUu6TQ2BlvcdGNAfKqi -->

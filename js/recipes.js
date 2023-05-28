@@ -1,7 +1,15 @@
+
+
+
+
+
+
+/*
+
 fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=posts')
     .then (response =>response.json())
     .then (data => {
-    const recipesPageContent= document.getElementById ('recipes-content'); /*check this info!!*/
+    const recipesPageContent= document.getElementById ('recipes-content'); /*check this info!!
     recipesPageContent.innerHTML = data [0].content.rendered; 
     })
     .catch (error =>{
@@ -11,7 +19,7 @@ fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=pos
 
 
 
-/*navegate to specific recipe - to get the recipe */
+/*navegate to specific recipe - to get the recipe 
 
 function navegateToPage (pageSlug){
     const apiUrl ='https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=${pageSlug}';
@@ -47,7 +55,7 @@ handlePageNavigation();
 
 
 
-//Filter buttons - the assigment didn't ask for filtering knockknock //
+//Filter buttons - the assigment didn't ask for filtering knockknock 
 
 const generalBtn = document.getElementById('generalBtn');
 const programmingBtn = document.getElementById('programmingBtn');
@@ -82,3 +90,4 @@ getJokes(url, "programming");
 
 
 
+*/

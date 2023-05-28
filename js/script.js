@@ -1,5 +1,42 @@
 
-curl -H "Authorization: Bearer 1UNyB2eaD7mq3gqMhy4jTzyR" https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36; 
+const baseUrl = "https://goodfoodgoodmood.learnbydoing.online/";
+const homeUrl ="https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36"; 
+
+
+fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
+    .then (response => response.json())
+    .then (data =>{
+        const pageData = data[0]; 
+        const logo = pageData.acf.logo;
+        const heading = pageData.title.rendered;
+        const paragraphs = pageData.content.rendered;
+    
+        const images = [];
+        const imageElements = pageData.content.rendered.match(/<img[^>]+>/g);
+        if (imageElements) {
+          imageElements.forEach(img => {
+            const imgSrc = img.match(/src="([^"]+)"/)[1];
+            images.push(imgSrc);
+          });
+        }
+    
+        // Process the extracted data
+        console.log('biglogo:', logo);
+        console.log('recipes-title', heading);
+        console.log('text', paragraphs);
+        console.log('Images:', images);
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+        console.log (data);
+   
+
+
+
+
+/*
 
 fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
     .then(response => response.json())
@@ -8,7 +45,7 @@ fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
     })
     
 
-/* js for the index page  
+ js for the index page  
 
 const nav = document.getElementById (".biglogo")
 
@@ -99,6 +136,21 @@ async function getJokes(url, joketype){
 };
 
 getJokes(url, "programming");
+
+const biglogo = document.getElementById ("biglogo"); 
+
+function fetchAPI (){
+    then (response => response.json())
+    .then (data =>{
+        console.log (data);
+    })
+    .catch (error =>{
+        console.error (error);
+    })
+}
+
+fetchAPI(); 
+
 */
 
 
