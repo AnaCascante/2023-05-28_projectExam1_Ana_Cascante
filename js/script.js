@@ -1,13 +1,14 @@
-
+/* use this a a template!! paste it in information :) */
 const baseUrl = "https://goodfoodgoodmood.learnbydoing.online/";
 const homeUrl ="https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36"; 
 
-
-fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
-    .then (response => response.json())
-    .then (data =>{
-        const pageData = data[0]; 
-        const logo = pageData.acf.logo;
+function fetchData (){
+    fetch(homeUrl)
+        .then (response => response.json())
+        .then (data =>{
+        console.log (data);
+        const pageData = data; 
+        
         const heading = pageData.title.rendered;
         const paragraphs = pageData.content.rendered;
     
@@ -20,19 +21,20 @@ fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
           });
         }
     
+        /* trenger ikke dette 
         // Process the extracted data
         console.log('biglogo:', logo);
         console.log('recipes-title', heading);
         console.log('text', paragraphs);
-        console.log('Images:', images);
+        console.log('Images:', images); */
       })
       .catch(error => {
        
         console.error(error);
       });
-        console.log (data);
-   
-
+    }
+ 
+    fetchData();
 
 
 
@@ -59,7 +61,7 @@ const nameBtn = document.getElementById ("name in html")
 const nameContainer = document.getElementById ("name in html")
 
 
-/* make an if- in case the btn is not in all the pages 
+/* make an if- in case the btn is not in all the pages to link to another page 
 
 if (nameBtn){
     nameBtn.addEventListener ("click",function () {
