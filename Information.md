@@ -180,4 +180,125 @@ fetchAPI();
 
 */
 
+/-- get all the link elements from the page---/
 
+const getLinks = document.querySelectorAll("a");
+const myarray = []
+
+.--- now loop throw elements and find the text.--- 
+ for (var i=0; i<getLinks.length; i++){
+    const nametext = getLinks [i].textContent;
+    const cleantext = nametext.replace (/\s+/g,'').trim();
+    const cleanlink = getLinks [i].href;
+    myarray.push([cleantext,cleanlink]);
+     }
+
+
+
+
+     function make_table() {
+    const table = '<table><thead><th>Name</th><th>Links</th></thead><tbody>';
+   for (var i=0; i<myarray.length; i++) {
+            table += '<tr><td>'+ myarray[i][0] + '</td><td>'+myarray[i][1]+'</td></tr>';
+    };
+ 
+    const w = window.open("");
+w.document.write(table); 
+}
+make_table()
+
+
+- gives the info to the console. 
+
+function fetchAPI (){
+    then (response => response.json())
+    .then (data =>{
+        console.log (data);
+    })
+    .catch (error =>{
+        console.error (error);
+    })
+}
+
+fetchAPI(); 
+
+
+
+get data from console: 
+
+-- first---. 
+const url=""; 
+ 
+async function getxxx(){
+    const response= await fecth(url); 
+    const data = await response.json();
+    console.log (data); 
+}
+
+getxxx(); 
+
+
+getting the objets from console: 
+const url=""; 
+ 
+async function getxxx(){
+    const response= await fecth(url); 
+    const data = await response.json();
+    
+    const {object, object2} = data; 
+
+    document.getElementById ('obj1').textContent = object;  
+    document.getElementById ('obj2').textContent= object2;
+    console.log (object); 
+     console.log (object2); 
+}
+
+getxxx(); 
+
+In the HTML-- write : 
+  <div><span id="obj1"></span><div> (this could be a h/p/osv)
+ <div><span id="obj2"></span><div> (this could be a h/p/osv)
+*
+
+
+creating HTML to get in the page. here you can insert as much html as needed for getting the info in html. 
+
+function createHTML (recipes){
+    for(let i=0; i <products.length; i++){
+        container.innerHTML += 'div class="recipe"
+                    <h2>${recipe.name}</h2> </div>';
+    }
+}
+
+
+to get the recipes from the recipe page.-.--------
+
+fetch('recipe page. ')
+  .then(response => response.json())
+  .then(data => {
+    const recipesToRender = data; // Assuming the response data is an array of recipe objects
+    recipesToRender.forEach(function(result) {
+      container.innerHTML += `
+        <div class="featured-recipes">
+          <h4 class="heading">${result.name}</h4>
+          <h4 class="description">${result.description}</h4>
+          <h4>${result.yields}</h4>
+          <img src="${result.thumbnail_url}" alt="${result.name}"/>
+        </div>
+      `;
+    });
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+  recipesToRender.forEach(function (result) {
+        conteiner.innerHTML += `<div class ="featured-recepies">
+                               <h4 class="heading">${result.name}</h4>
+                               <h4 class="description">${result.description}</h4>
+                               <h4>${result.yields}</h4>
+
+                               <img src="${result.thumbnail_url}" alt="${result.name}"/>
+                               
+                              </div>`;
+      });   
