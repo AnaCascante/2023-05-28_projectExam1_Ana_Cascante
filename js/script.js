@@ -1,7 +1,11 @@
-/* use this a a template!! paste it in information :) */
+
 const baseUrl = "https://goodfoodgoodmood.learnbydoing.online/";
 const homeUrl ="https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36"; 
-const recipesUrl =
+const recipesDessertUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/366";
+const recipesDinnerUrl= "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/367";
+const recipesBreakfastUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/50";
+const contactUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/2";
+const aboutUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/48";
 
 function fetchData (){
     fetch(homeUrl)
@@ -9,7 +13,103 @@ function fetchData (){
         .then (data =>{
         console.log (data);
         const pageData = data; 
-        
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+    }
+ 
+    fetchData.innerHtml = '<div>'
+
+    const biglogo = document.getElementById ('biglogo'); 
+    
+    const breakfastBtn = document.getElementById('breakfastBtn');
+    const dinnerBtn = document.getElementById('dinnerBtn');
+    const dessertBtn = document.getElementById('dessertBtn');
+    
+    
+    breakfastBtn.onclick = function(extracted){
+        getRecipes(recipesBreakfastUrl, "breakfast");
+    };
+    dinnerBtn.onclick = function(extracted){
+        getRecipes(recipesDinnerUrl, "dinner");
+    };
+    dessertBtn.onclick = function(extracted){
+        getRecipes(recipesDessertUrl, "dessert");
+    };
+
+
+    fetchData();
+
+
+
+ /*   
+return { 
+    <div>
+        <LOGO> >dd</LOGO>
+    </div>
+        <h1>Recipes</h1>
+        <img ></img>
+        <p></p>
+    <section>
+        <a> <img src ={.image} alt=xxx.title + <breakfastBtnname </a>
+        <a> <img src ={.image} alt=xxx.title + <breakfastBtnname </a>
+        <a> <img src ={.image} alt=xxx.title + <breakfastBtnname </a>
+    </section>
+    <div>
+        <p>{}</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    <footer>
+        <div>About</div>
+        <div>Contact</div>
+    </footer> 
+}
+
+
+
+/*</div>
+
+    const breakfastBtn = document.getElementById('breakfastBtn');
+    const dinnerBtn = document.getElementById('dinnerBtn');
+    const dessertBtn = document.getElementById('dessertBtn');
+    
+    /*
+    breakfastBtn.onclick = function(){
+        getRecipes(url, "breakfast");
+    }
+    dinnerBtn.onclick = function(){
+        getRecipes(url, "dinner");
+    }
+    dessertBtn.onclick = function(){
+        getRecipes(url, "dessert");
+    }*/
+    
+    /*
+    async function getRecipes(url, recipetype){
+        const response = await fetch(url);
+        const recipes = await response.json();
+        recipesContainer.innerHTML = "";
+        recipes.forEach(function(recipe) {
+            if(recipe.type == recipetype)
+            {
+                recipesContainer.innerHTML += ` <div class="recipes-setup"><h2>${recipes.setup}</h2>
+                <div class="recipes-type"><h2>Joke type: ${recipes.type}</h2>
+                <a href="recipe.html?id=${recipe.id}</a>
+                </div>
+                <hr>
+                `;
+            }
+        })
+    };
+
+getRecipes();*/
+
+
+   /*
         const heading = pageData.title.rendered;
         const paragraphs = pageData.content.rendered;
     
@@ -29,55 +129,42 @@ function fetchData (){
         console.log('recipes-title', heading);
         console.log('text', paragraphs);
         console.log('Images:', images); */
-      })
-      .catch(error => {
-       
-        console.error(error);
-      });
-    }
- 
-    fetchData();
 
-   
+        /* make it mine 
 
+        function displayPosts(data) {
 
-
-/* those are the links to the three pages - breakfast-dinner-dessert*/
-
-    const breakfastBtn = document.getElementById('breakfastBtn');
-    const dinnerBtn = document.getElementById('dinnerBtn');
-    const dessertBtn = document.getElementById('dessertBtn');
-    
-    breakfastBtn.onclick = function(){
-        getRecipes(url, "breakfast");
-    }
-    dinnerBtn.onclick = function(){
-        getRecipes(url, "dinner");
-    }
-    dessertBtn.onclick = function(){
-        getRecipes(url, "dessert");
-    }
-    
-    
-    async function getRecipes(url, recipetype){
-        const response = await fetch(url);
-        const recipes = await response.json();
-        recipesContainer.innerHTML = "";
-        recipes.forEach(function(recipe) {
-            if(recipe.type == recipetype)
-            {
-                recipesContainer.innerHTML += ` <div class="recipes-setup"><h2>${recipes.setup}</h2>
-                <div class="recipes-type"><h2>Joke type: ${recipes.type}</h2>
-                <a href="recipe.html?id=${recipe.id}</a>
-                </div>
-                <hr>
-                `;
-            }
-        })
-    };
-
-getRecipes();
-
-
-
-
+            const recipeNames = data.map((firstWord) => {
+                const firstWords = firstWord.title.rendered.split(" ");
+                return firstWords[0];
+            });
+        
+            const xxxxx = data.map((restWord) => {
+                const restWords = restWord.title.rendered.split(" ");
+                const lastWord = restWords.pop();
+                const secLastWord = restWords.pop();
+                const joinedWords = secLastWord + " " + lastWord;
+                return joinedWords;
+            });
+        
+            const recipeImgs = data.map((image) => {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = image.content.rendered;
+                const imgEl = tempDiv.querySelector('img');
+                const src = imgEl ? imgEl.getAttribute('src') : null;
+                return src;
+            });
+        
+            data.forEach((post, i) => {
+                const postBoxes = `
+                <a href="xxx-spes.html?id=${post.id}">
+                <div class="recipe-posts">
+                  <div class="xxx-posts-img"><img src="${catImgs[i]}"></div>
+                  <h2 class="cat-name">${catNames[i]}</h2>
+                  <p class="cat-age">${catAges[i]}</p>
+                `
+                recipeContainer.innerHTML += postBoxes;
+            });
+        
+        };
+    */    

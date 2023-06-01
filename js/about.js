@@ -1,12 +1,16 @@
+function fetchAbout (){
+    fetch(aboutUrl)
+        .then (response => response.json())
+        .then (data =>{
+        console.log (data);
+        const pageData = data; 
 
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+    }
+ 
+    fetchAbout();
 
-/*
-fetch ('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=about')
-    .then (response =>response.json())
-    .then (data => {
-        const aboutPageContent= document.getElementById ('about-content'); 
-        aboutPageContent.innerHTML = data.content.rendered; 
-    })
-    .catch (error =>{
-        console.log ('Error:', error);
-    })

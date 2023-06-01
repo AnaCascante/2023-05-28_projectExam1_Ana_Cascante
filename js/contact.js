@@ -1,6 +1,21 @@
 
+function fetchContact (){
+  fetch(contactUrl)
+      .then (response => response.json())
+      .then (data =>{
+      console.log (data);
+      const pageData = data;      
+      })
+    .catch(error => {
+     
+      console.error(error);
+    });
+  }
+
+  fetchContact();
 
 
+  /*
 const form = document.getElementById('contactForm');
 const name = document.getElementById('firstname');
 const nameError = document.getElementById('nameError');
