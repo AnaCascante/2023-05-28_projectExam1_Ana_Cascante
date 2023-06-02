@@ -19,7 +19,7 @@ body {
   align-items: center;
   height: 40vh;
 
-    /*
+
     width: 70rem;
     height: 60rem;
     border-radius: 30%;
@@ -30,8 +30,13 @@ body {
     display: flex;
     margin: 5%;*/
 
-
 }
+.nav{
+justify-content: center;
+align-items: center;
+height: 40vh;
+}
+
 
 h1 {
     color: #0000; 

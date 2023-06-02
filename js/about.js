@@ -1,16 +1,15 @@
-function fetchAbout (){
-    fetch(aboutUrl)
-        .then (response => response.json())
-        .then (data =>{
-        console.log (data);
-        const pageData = data; 
+async function fetchAboutPage(){
+  fetch(aboutUrl)
+      .then (response => response.json())
+      .then (data =>{
+      console.log (data);
+      const pageData = data; 
+    })
+    .catch(error => {
+     
+      console.error(error);
+    });
+  }
 
-      })
-      .catch(error => {
-       
-        console.error(error);
-      });
-    }
- 
-    fetchAbout();
+fetchAboutPage ();
 

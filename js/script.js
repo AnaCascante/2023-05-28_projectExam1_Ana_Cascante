@@ -1,13 +1,14 @@
-
-const baseUrl = "https://goodfoodgoodmood.learnbydoing.online/";
+const baseUrl = "https://goodfoodgoodmood.learnbydoing.online";
 const homeUrl ="https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36"; 
-const recipesDessertUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/366";
-const recipesDinnerUrl= "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/367";
-const recipesBreakfastUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/50";
+const dessertUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/366";
+const dinnerUrl= "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/367";
+const breakfastUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/50";
 const contactUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/2";
 const aboutUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/48";
+const recipesUrl =[dessertUrl,dinnerUrl,breakfastUrl];
 
-function fetchData (){
+
+async function fetchHomepage (){
     fetch(homeUrl)
         .then (response => response.json())
         .then (data =>{
@@ -19,7 +20,29 @@ function fetchData (){
         console.error(error);
       });
     }
- 
+
+fetchHomepage ();
+
+
+
+/*
+async function fetchHomepage (){
+    fetch(homeUrl)
+        .then (response => response.json())
+        .then (data =>{
+        console.log (data);
+        const pageData = data; 
+      })
+      .catch(error => {
+       
+        console.error(error);
+      });
+    }
+
+fetchHomepage ();
+
+
+ /*
     fetchData.innerHtml = '<div>'
 
     const biglogo = document.getElementById ('biglogo'); 

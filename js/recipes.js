@@ -1,19 +1,35 @@
 
-function fetchRecipes(){
-    fetch(recipesDessertUrl+recipesBreakfastUrl+recipesDinnerUrl)
-        .then (response => response.json())
-        .then (data =>{
-        console.log (data);
-        const pageData = data; 
-        
+async function fetchSpecRecipe() {
+  try {
+    const responses = await Promise.all(recipesUrl.map(recipesUrl => fetch(recipesUrl)));
+    const data = await Promise.all(responses.map(response => response.json()));
+
+    data.forEach((responseData, index) => {
+      console.log(`Data from ${recipesUrl[index]}:`, responseData);
+      // Process the data as needed
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchSpecRecipe();
+
+
+    /*
+document.getElementById("recipe").innerHTML = `
+<h1 class="recipe-title"> ${recipeData.title} </h1>
+<p class= "recipe-description">${recipeData.text}</p>
+`
+
+
+
+
+
+/*
+
         const heading = pageData.title.rendered;
         const paragraphs = pageData.content.rendered; 
-        }
-      .catch(error => {
-       
-        console.error(error);
-      });
-    }
 
     function displayRecipes (recipes){
         const recipesContainer = document.getElementById ('recipeContainer'); 
@@ -23,14 +39,6 @@ function fetchRecipes(){
             const ???Element = document.getElementById('');
             recipesContainer.appendChild(???Element);
         });
-    }
- 
-    fetchRecipes();
-
-
-
-
-/*
 
 fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages?slug=posts')
     .then (response =>response.json())

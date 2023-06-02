@@ -301,4 +301,140 @@ fetch('recipe page. ')
                                <img src="${result.thumbnail_url}" alt="${result.name}"/>
                                
                               </div>`;
-      });   
+      });   '
+
+
+calling the info- fetch to the console- get it out on the page. with a function 
+
+asyn function catchSome (){
+    const response = await fetch ('some.jpg');
+    const blob = await.response blob ();
+        document.getElementById('this')src=URL.creatorObjectURL(blob); 
+        catchSome()
+            .then (response=>{console.log('ya');
+            })
+    .catch (error =>{
+        console.log(error);
+        console.error(error);
+    })
+}
+
+
+Another way 
+
+--- get console the data----
+asyn function home(){
+    const restonse = await fetch ("url");
+    const data = await response.json ();
+    console.log(data)
+    createAList(data.message)
+}
+
+home()
+
+---- get the data to the page, a list of elements in a scroll modus---- element by Id in the Html-- then the code that will be loaded in HTML (Html code with apiinfo displayed like :${})
+
+function createAList (breList){
+    document.getElementById("bre").innerHTML='
+    <select onchange ="loadByBre()">
+    <option>Choose a dog breed</option>
+    ${Object.keys(breList).map(function(bre){
+        return '<option>${bre}</option>
+    }).join('')}
+} ---(this is a way of getting the objets from the array)---- one function - one responsability! (connect one function to the other by declaring the var) ---
+
+now get the pic from each dog. 
+asyn function loadByBre(bre){
+    if (bre != "Choose a dog breed"){
+        const response = await fetch ('https://exemple/api/${bre}/images') --- I get many images!!--- 
+        const data = await response.json ();
+        console.log(data)
+        createSlideshow (data.message)
+}
+
+function createSlideShow(images){
+    document.getElementById("slideshow").innerHTML =' 
+    <div class="slide" style="background-image: url('${images[0]}') ></div>
+    console.log(images)
+
+}
+
+
+
+        /* trenger ikke dette    
+         Process the extracted data
+        console.log('biglogo:', logo);
+        console.log('recipes-title', heading);
+        console.log('text', paragraphs);
+        console.log('Images:', images); 
+fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/posts?slug=your-post-slug')
+    .then (response =>response.json())
+    .then (data => {
+    const recipePageContent= document.getElementById ('recipe-content'); /*check this info!!
+
+
+    recipePageContent.innerHTML = data [0].content.rendered; 
+    })
+    .catch (error =>{
+    console.log ('Error:', error);
+    })'
+
+    something here?? 
+
+    function displayPost(data) {
+
+    const xxxName = data.title.rendered.split(" ")[0];
+
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = data.content.rendered;
+    const imgEl = tempDiv.querySelector("img");
+    const src = imgEl ? imgEl.getAttribute("src") : null;
+
+    const ps = tempDiv.getElementsByTagName("p");
+    const pText = Array.from(ps).map(p => p.innerHTML).join(" ");
+
+    const fetchedPost = `
+        <h1 class="xxxx-spes-title normal-heading">
+        lorem ipsum  - ${xxxName}</h1>
+        <div class="xxx-posts-img xxxt-spes-img">
+        <img src="${src}" alt="Bilde av r">
+        </div>
+        <p class="katt-spes-text">${pText}</p>
+        `
+        ;
+
+    spesContainer.innerHTML += fetchedPost;
+
+    const catgArr = data.categories;
+    const catgProm = catgArr.map((catgId) => getCategory(catgId));
+
+    Promise.all(catgProm)
+        .then((catgs) => {
+            const fetchedCatgs = `
+                <div class="catg-wrapper">
+                    ${catgs.map((catg) => `
+                <div class="catpaw-symbol"></div>
+                <div class="categories">
+                    <p>${catg}</p>
+                </div>
+            `).join("")}
+            </div>
+            `
+            spesContainer.innerHTML += fetchedCatgs;
+        })
+        .catch((error) => console.error(error));
+};
+
+function getCategory(catgId) {
+    return fetch(CATG_API + "/" + catgId)
+        .then((res) => res.json())
+        .then((data) => {
+            const catgDesc = data.description;
+            return catgDesc;
+        })
+        .catch((error) => console.error(error));
+};
+
+
+fetchAPI();
+
