@@ -1,18 +1,63 @@
 const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wprm_recipe?per_page=100";
 
-async function recipeWp() {
-  try {
-    const responses = await (recipeUrl);
-    const data = await response.json;
-    console.log (data);
 
-  } catch (error) {
-    console.error("error");
+  
+  const fetchRecipes = async () =>{
+    await fetch(recipeUrl)
+    .then (response => response.json())
+    .then (data =>{
+      const filterRecipes = data.map (recipe => recipe.recipe); 
+
+      /* recipe.recipe.tags.course[0].name === "dessert")*/ 
+      /* recipe.recipe.tags.course[0].name === "")*/ 
+
+      console.log (filterRecipes);
+
+      const recipe = document.getElementById ("recipeContainer");
+      let perRecipe = "";
+      for (let i = 0; i < filterRecipes.length; i++) {
+        const currentData = filterRecipes[i];
+        perRecipe += `
+        <div class="recipe-image">
+        <a href="specificrecipe.html?rid=${currentData.id}" >
+
+        <img src="${currentData.image_url}
+        " alt="recipe image" id="recipe-image"></a>
+        </div>
+        <div class="¨recipe-info">
+        <h2 class="recipe-title" id="recipe-title">${currentData.name}</h2></a>
+        
+        <p class="recipe-text" id="recipe-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
+        </div> 
+        `;
+        }
+        recipe.innerHTML = perRecipe;
+
+
+    }) .catch (error => console.log (error)); 
+
   }
+
+fetchRecipes ();
+
+
+/*button.addEventListener("click", filterfunction) Til menu dessert /dinner / breakfast*/
+
+
+//Filter buttons - the assigment didn't ask for filtering knockknock 
+
+/*
+const breakfastBtn = document.getElementById('generalBtn');
+const programmingBtn = document.getElementById('programmingBtn');
+
+generalBtn.onclick = function(e) {
+    getJokes(url, "general");
 }
- 
-console.log (recipeWp);
-recipeWp();
+programmingBtn.onclick = function(e) {
+    getJokes(url, "programming");
+}
+*/
+
 
 /* from the blog--------------------
 const blogDisplay = document.querySelector(".blogs");

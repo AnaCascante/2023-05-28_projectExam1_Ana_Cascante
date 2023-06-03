@@ -1,3 +1,73 @@
+const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wprm_recipe";
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const crId = urlParams.get('rid');
+
+
+const fetchRecipe = async () =>{
+  await fetch(recipeUrl + '/' + crId)
+  .then (response => response.json())
+  .then (data =>{
+    console.log (data.recipe);
+  }) 
+  .catch (error => console.log (error)); 
+
+}
+
+fetchRecipe ();
+
+
+
+innerHTML = `` 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+   const srDetails = async () =>{
+    await fetch(recipeUrl)
+    .then (response => response.json())
+    .then (data =>{ }
+    }
+*/
+
+ 
+
+/*
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const crId = urlParams.get('rid')
+console.log(crId);
+*/
+ 
+ 
+ 
+ 
+ /*
  async function fetchSpecRecipe() {
     try {
       const responses = await Promise.all(recipesUrl.map(recipesUrl => fetch(recipesUrl)));
@@ -14,7 +84,7 @@
   
   fetchSpecRecipe();
 
-/*
+
   const blogPost = document.querySelector(".blog");
 const modalImg = document.querySelector(".modal-img")
 
@@ -54,8 +124,6 @@ async function getBlogDetailed() {
 }
 
 getBlogDetailed();
-
-
-
+*/
 
 
