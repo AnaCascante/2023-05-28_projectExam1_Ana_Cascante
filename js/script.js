@@ -1,4 +1,3 @@
-const baseUrl = "https://goodfoodgoodmood.learnbydoing.online";
 const homeUrl ="https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36"; 
 const dessertUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/366";
 const dinnerUrl= "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/367";

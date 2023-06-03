@@ -16,6 +16,9 @@ async function fetchSpecRecipe() {
 fetchSpecRecipe();
 
 
+
+
+
     /*
 document.getElementById("recipe").innerHTML = `
 <h1 class="recipe-title"> ${recipeData.title} </h1>
