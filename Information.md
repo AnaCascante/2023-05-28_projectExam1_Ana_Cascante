@@ -60,25 +60,9 @@ function fetchData (){
     }
  
     fetchData();
+  
 
 
-
-/*
-
-fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/pages/36')
-    .then(response => response.json())
-    .then(data => {
-        const homePageContent= data[0].content.rendered;
-    })
-    
-
- js for the index page  
-
-const nav = document.getElementById (".biglogo")
-
-
-for the logo. 
-"https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/media/248"
 
 /*exempel of code to get an element from rest api 
 
@@ -126,24 +110,6 @@ function createHTML (postdata){
 
 
 
-/*fetch the api for getting the menu */
-
-/*const url = "https://api.noroff.dev/api/v1/jokes";
-const jokesContainer = document.querySelector(".jokes");
-
-//Filter buttons - the assigment didn't ask for filtering knockknock //
-
-const generalBtn = document.getElementById('generalBtn');
-const programmingBtn = document.getElementById('programmingBtn');
-
-generalBtn.onclick = function(e) {
-    getJokes(url, "general");
-}
-programmingBtn.onclick = function(e) {
-    getJokes(url, "programming");
-}
-
-
 async function getJokes(url, joketype){
     const response = await fetch(url);
     const jokes = await response.json();
@@ -164,7 +130,7 @@ async function getJokes(url, joketype){
 
 getJokes(url, "programming");
 
-const biglogo = document.getElementById ("biglogo"); 
+
 
 function fetchAPI (){
     then (response => response.json())

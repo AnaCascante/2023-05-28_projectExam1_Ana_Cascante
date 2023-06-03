@@ -1,4 +1,42 @@
+const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wprm_recipe?per_page=100";
 
+async function recipeWp() {
+  try {
+    const responses = await (recipeUrl);
+    const data = await response.json;
+    console.log (data);
+
+  } catch (error) {
+    console.error("error");
+  }
+}
+ 
+console.log (recipeWp);
+recipeWp();
+
+
+
+
+/*
+const recipe = document.getElementsByTagNameNS ("dessert");
+
+async function fetchRecipeByTagNS() {
+  try {
+    const responses = await (recipeUrl);
+    const data = await response.json;
+    console.log (data);
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchRecipeByTagNS();
+
+
+
+
+/*
 async function fetchSpecRecipe() {
   try {
     const responses = await Promise.all(recipesUrl.map(recipesUrl => fetch(recipesUrl)));
@@ -15,6 +53,50 @@ async function fetchSpecRecipe() {
 
 fetchSpecRecipe();
 
+const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wprm_recipe?per_page=100";
+
+async function getrecipes() {
+  try {
+    const response = await fetch(recipeUrl);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+console.log ();
+
+*/
+/*
+const recipeContainer = document.getElementsByTagName ("dessert");
+
+recipeContainer.lenght 
+
+/*
+const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wprm_recipe?per_page=100";
+
+const recipeContainer = document.getElementById ('recipeContainer');
+const tagSlug ='dessert'
+
+async function getRecipe(recipeUrl, joketype){
+  const response = await fetch(recipeUrl);
+  const recipes = await response.json();
+  recipeContainer.innerHTML = "";
+  recipes.forEach((recipe =>{
+    if (recipe.tags.includes ())
+
+          recipeContainer.innerHTML += ` <div class="recipe-image"><a href="specificrecipe.html"><img src="${image_url}" alt="recipe image" id="recipe-image"></a></div>
+          <div class="¨recipe-info">
+              <a href="specificrecipe.html">
+              <h2 class="recipe-title" id="recipe-title">${title.rendered}</h2></a>
+          </div>
+          `;
+      }
+
+
+getRecipe(recipeUrl, "$slug");*/
 
 
 

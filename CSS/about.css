@@ -1,7 +1,16 @@
-.about-me {
-    background-color: aliceblue;
+.aboutme {
+    font-size: 3rem;
+    font-family: 'Fira Sans', sans-serif;
 }
 
-.dinner-recipes {
-    background-color: ;
+.dinnerrecipesContainer {
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.dinnerrecipes {
+    width: 300px;
+    height: 250px;
 }

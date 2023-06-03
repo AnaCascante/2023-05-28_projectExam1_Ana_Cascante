@@ -24,6 +24,9 @@ fetchHomepage ();
 
 
 
+
+
+
 /*
 async function fetchHomepage (){
     fetch(homeUrl)
@@ -41,28 +44,6 @@ async function fetchHomepage (){
 fetchHomepage ();
 
 
- /*
-    fetchData.innerHtml = '<div>'
-
-    const biglogo = document.getElementById ('biglogo'); 
-    
-    const breakfastBtn = document.getElementById('breakfastBtn');
-    const dinnerBtn = document.getElementById('dinnerBtn');
-    const dessertBtn = document.getElementById('dessertBtn');
-    
-    
-    breakfastBtn.onclick = function(extracted){
-        getRecipes(recipesBreakfastUrl, "breakfast");
-    };
-    dinnerBtn.onclick = function(extracted){
-        getRecipes(recipesDinnerUrl, "dinner");
-    };
-    dessertBtn.onclick = function(extracted){
-        getRecipes(recipesDessertUrl, "dessert");
-    };
-
-
-    fetchData();
 
 
 
@@ -93,42 +74,10 @@ return {
 
 
 
-/*</div>
 
-    const breakfastBtn = document.getElementById('breakfastBtn');
-    const dinnerBtn = document.getElementById('dinnerBtn');
-    const dessertBtn = document.getElementById('dessertBtn');
     
     /*
-    breakfastBtn.onclick = function(){
-        getRecipes(url, "breakfast");
-    }
-    dinnerBtn.onclick = function(){
-        getRecipes(url, "dinner");
-    }
-    dessertBtn.onclick = function(){
-        getRecipes(url, "dessert");
-    }*/
-    
-    /*
-    async function getRecipes(url, recipetype){
-        const response = await fetch(url);
-        const recipes = await response.json();
-        recipesContainer.innerHTML = "";
-        recipes.forEach(function(recipe) {
-            if(recipe.type == recipetype)
-            {
-                recipesContainer.innerHTML += ` <div class="recipes-setup"><h2>${recipes.setup}</h2>
-                <div class="recipes-type"><h2>Joke type: ${recipes.type}</h2>
-                <a href="recipe.html?id=${recipe.id}</a>
-                </div>
-                <hr>
-                `;
-            }
-        })
-    };
 
-getRecipes();*/
 
 
    /*
