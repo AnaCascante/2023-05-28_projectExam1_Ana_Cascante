@@ -1,5 +1,30 @@
+.recipe-container {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
 
+  .recipe-image {
+    flex-basis: 30%;
+    max-width: 100%;
+    height: auto;
+    margin-left: 50px;
+  }
 
+  .recipe-info {
+    flex-basis: 70%;
+    padding-left: 10px;
+  }
 
-/*to get the html to show the recipes*/
+  .recipe-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    font-family: 'Work Sans', sans-serif;
+  }
 
+  .recipe-text {
+    margin-top: 10px;
+    font-family: 'PT Sans', sans-serif; 
+
+  }

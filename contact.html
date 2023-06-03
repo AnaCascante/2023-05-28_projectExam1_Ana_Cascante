@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/contact.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=PT+Sans&family=Work+Sans&display=swap" rel="stylesheet">
@@ -14,23 +15,46 @@
 </head>
 
 <body>
-    <div class="nav">
-        <a class="logo" href="index.html"></a>        
-    </div>
-    <h1 class="Contact"></h1>
-    <div class="contact text"></div>
-    <form class="contactform" id="contactform">
-        <input type="text" name="First name" id="firstname" placeholder="Your first name" required>
-        <input type="text" name="Last name" id="lastname" placeholder="Your last name" required>
-        <input type="email" name="Email" id="email" placeholder="your email" required>
-        <textarea name="Message/ comment" id="message" placeholder="we care about your opinion"></textarea>
-        <button type="submit"></button>
-    </form>
-  
+    <header class="header">
+        <div class="logo">
+          <a href="index.html"><img src="" alt="logo" id="logo"></a>
+        </div>
+    </header>
 
-    <footer>
-        <div class="about" href="about.html"></div>
-        <div class="contact" href="contact.html"></div>
+    <p id="contact-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis urna nec lorem consequat, vel luctus mi tristique. Curabitur pharetra velit vel lobortis lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis urna nec lorem consequat, vel luctus mi tristique. Curabitur pharetra velit vel lobortis lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis urna nec lorem consequat, vel luctus mi tristique. Curabitur pharetra velit vel lobortis lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis urna nec lorem consequat, vel luctus mi tristique. Curabitur pharetra velit vel lobortis lobortis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis urna nec lorem consequat, vel luctus mi tristique. Curabitur pharetra velit vel lobortis lobortis.</p>
+    
+   <div class="form-container">
+    <h2>Send message</h2>
+
+    <form class="contactform" id="contactform" action="submit.php" method="post">
+        <div class="form">
+            <label for="firstname">First Name</label>
+            <input type="text" name="First name" id="firstname" placeholder="Your first name" required>
+        </div>
+        <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="Last name" id="lastname" placeholder="Your last name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="Email" id="email" placeholder="your email" required>
+        </div>
+        <div>
+            <label for="text">Message/Comment</label>
+            <textarea name="Message/ comment" id="message" placeholder="we care about your opinion"></textarea>
+        </div>
+        <div><button type="submit" id="submit" class="submit-button">Submit</button></div>
+
+
+       
+        
+        
+    </form>
+</div> 
+
+    <footer class="footer">
+        <a href="about.html" class="about" id="about">About</a>
+        <a href="contact.html" class="contact" id="contact">Contact</a>
     </footer>
    
 

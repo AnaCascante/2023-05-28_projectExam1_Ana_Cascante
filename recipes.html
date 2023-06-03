@@ -13,26 +13,48 @@
 
 <body>
     
-    <div class="nav">
-        <a class="logo" href="index.html"></a>        
+    <header class="header">
+        <div class="logo">
+          <a href="index.html"><img src="" alt="logo" id="logo"></a>
+        </div>
+    </header>
+    
+    <div class="menu">
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="breakfast menu" class="breakfastBtn" id="breakfastBtn" >
+              <p>Breakfast</p>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="dinner menu" class="dinnerBtn" id="dinnerBtn">
+              <p>Dinner</p>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="dessert menu" class="dessertBtn" id="dessertBtn">
+              <p>Dessert</p>
+            </a>
+          </div>
     </div>
-    <section>
-        <a class="breakfastRecipes" id="breakfastBtn" href="recipes.html"><img src="" alt="breakfastimage"><span>Breakfast</span></a>    
-         <a class="dinnerRecipes" id="dinnerBtn" href="recipes.html"><img src="" alt="dinnerimage"><span>Dinner</span></a>          
-         <a class="dessertRecipes" id="dessertBtn" href="recipes.html"><img src="" alt="dessertimage"><span>Dessert</span></a>         
-    </section>  
 
+    <div class="recipe-container" id="recipe-container">
+        <div class="recipe-image"><a href="specificrecipe.html"><img src="" alt="recipe image" id="recipe-image"></a></div>
+        <div class="¨recipe-info">
+            <a href="specificrecipe.html">
+            <h2 class="recipe-title" id="recipe-title">Recipe</h2></a>
+            <p class="recipe-text" id="recipe-text">lorem ipsum ................................</p>
+        </div>
+    </div>
+    
 
-    <div class="recipe" id="recipe"></div>
-
-    <footer>
-        <div class="about" href="about.html"></div>
-        <div class="contact" href="contact.html"></div>
+    <footer class="footer">
+        <a href="about.html" class="about" id="about">About</a>
+        <a href="contact.html" class="contact" id="contact">Contact</a>
     </footer>
-   
-
-
-
+    
    <script src="js/script.js"></script>
    <script src="js/recipes.js"></script>
 

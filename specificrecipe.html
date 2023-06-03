@@ -11,44 +11,39 @@
 </head>
 
 <body>
-    <div class="nav">
-        <a class="logo" href="index.html"></a>        
+    <header class="header">
+        <div class="logo">
+          <a href="index.html"><img src="" alt="logo" id="logo"></a>
+        </div>
+    </header>
+    
+    <div class="menu">
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="breakfast menu" class="breakfastBtn" id="breakfastBtn" >
+              <p>Breakfast</p>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="dinner menu" class="dinnerBtn" id="dinnerBtn">
+              <p>Dinner</p>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="recipes.html">
+              <img src="" alt="dessert menu" class="dessertBtn" id="dessertBtn">
+              <p>Dessert</p>
+            </a>
+          </div>
     </div>
-    <div>
-        <section class="breakfastRecipes" href="recipes.html"></section>
-        <section class="dinnerRecipes" href="recipes.html"></section>
-        <section class="dessertRecipes" href="recipes.html"></section>
-    </div>  
-    <div class="specific recipe"></div>
-        <img scr ="" alt=" bilde recipe" id = "bilde recipe"> 
-        <h1 class=" specific recipe title"></h1>
-        <p class = "specific recipe text"></p>
 
+    <div class="recipe" id="specificrecipe-container">here goes the wp-recipe</div>
 
-    <footer>
-        <div class="about" href="about.html"></div>
-        <div class="contact" href="contact.html"></div>
+    <footer class="footer">
+        <a href="about.html" class="about" id="about">About</a>
+        <a href="contact.html" class="contact" id="contact">Contact</a>
     </footer>
-   
-
- <!--  
-    <div class="nav">
-        <a class="mainpage" href="index.html">Jokes</a>
-        <a class="singeljoke" href ="recipes.html">Joke</a>
-    </div>
-
-    <div class="categories">
-        <button class="generalBtn" id="generalBtn">General Jokes</button>
-        <button class="programmingBtn" id="programmingBtn">Programming Jokes</button>
-    </div>
-
-    <h1>Jokes</h1>
-
-    <div class="jokes">
-        <button class="showhideBtn" id="showhideBtn">Punchline</button>
-    </div>
--->
-
 
    <script src="js/script.js"></script>
    <script src="js/specificrecipe.js"></script>
