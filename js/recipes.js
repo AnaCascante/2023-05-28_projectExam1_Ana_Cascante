@@ -58,6 +58,34 @@ programmingBtn.onclick = function(e) {
 }
 */
 
+/*---------- for style each recipe----------
+
+const reci = document.getElementById('element1 ');
+
+
+const fetchData = new Promise((resolve, reject) => {
+
+  setTimeout(() => {
+    const data = 'Information received';
+    resolve(data);
+  }, 2000);
+});
+
+
+fetchData.then((data) => {
+  element1.textContent = data;
+  element1.style.color = 'blue'; 
+  element1.style.fontWeight = 'bold';
+})
+.catch((error) => {
+  console.log(error);
+});
+
+*/
+
+
+
+
 
 /* from the blog--------------------
 const blogDisplay = document.querySelector(".blogs");

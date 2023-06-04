@@ -2,8 +2,8 @@
     background-color: #f1f3f1a1;
     box-sizing: border-box;
     border: 1px solid black;
-    padding: 30px; 
-    margin: 40px;
+    margin: 50px 200px;
+    padding: 20px;
   }
 
 /*------------ section ------------1*/
@@ -19,8 +19,8 @@
 
 .srimage {
     margin-left: 10px;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 
 .buttonsection {
@@ -30,7 +30,7 @@
 }
 
 .printBtn, .pinBtn {
-    width: 500px;
+    width: 350px;
     height: 50px;
     font-size: 20px; 
     font-weight: bold;   
@@ -49,7 +49,7 @@
   margin: 20px 0;
 }
 
-.iconTime {
+.iconTime, .iconSearch {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -114,29 +114,12 @@ h2.equipment:after, h2.ingredients:after, h2.instructions:after {
   }
 
 
-/*---------- section 5--------------*/
-/*---------- section 6--------------*/
+/*---------- leave a reply section  --------------*/
+
+/* I do not use it, I will not put it in my HTML */
 
 
-/*media for tablet*/
-
-@media (min-width: 768px) {
-   
-
-/*media for mobile phone*/
-
-@media (min-width: 480px) and (max-width:768px)  {
-  
-} 
 
 
-/*media for tablet*/
 
-@media (min-width: 768px) {
-   
 
-    /*media for mobile phone*/
-    
-    @media (min-width: 480px) and (max-width:768px)  {
-      
-    }     

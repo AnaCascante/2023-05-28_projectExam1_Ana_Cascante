@@ -1,33 +1,33 @@
-
-
-
-.recipe-container {
+.recipeContainer {
     display: flex;
     margin-bottom: 10px;
     margin-top: 50px;
   }
 
-  .recipe-image {
+  .recipeImage {
     flex-basis: 30%;
     max-width: 100%;
     height: auto;
     margin-left: 50px;
   }
 
-  .recipe-info {
+  .recipeInfo {
     flex-basis: 70%;
     padding-left: 10px;
   }
 
-  .recipe-title {
+  .recipeTitle {
     font-size: 20px;
     font-weight: bold;
     margin-top: 0;
     font-family: 'Work Sans', sans-serif;
   }
 
-  .recipe-text {
+  .recipeText {
     margin-top: 10px;
     font-family: 'PT Sans', sans-serif; 
+  }
 
+  .onerecipe {
+    display: block;
   }
