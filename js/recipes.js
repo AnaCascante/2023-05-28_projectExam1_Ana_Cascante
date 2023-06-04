@@ -2,6 +2,9 @@ const recipeUrl = "https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/wp
 
 /* -- this code is not working-- it showld get the btn and get the recipes by category
 
+
+ const filterRecipes.document.getElementByCategory ("recipe"); 
+
 const breakfastBtn = document.getElementById("breakfastBtn");
   breakfastBtn.addEventListener("click", () => {
     renderRecipesByCategory("dessert");
@@ -11,6 +14,8 @@ const breakfastBtn = document.getElementById("breakfastBtn");
   dinnerBtn.addEventListener("click", () => {
     renderRecipesByCategory("dinner");
   });
+
+  
   
   const dessertBtn = document.getElementById("dessertBtn");
   dessertBtn.addEventListener("click", () => {
@@ -23,7 +28,7 @@ const breakfastBtn = document.getElementById("breakfastBtn");
     await fetch(recipeUrl)
     .then (response => response.json())
     .then (data =>{
-      const filterRecipes = data.map (recipe => recipe.category); 
+      const filterRecipes = data.map (recipe => recipe.recipe); 
    
       console.log (filterRecipes);
  
