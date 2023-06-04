@@ -9,17 +9,18 @@ const fetchRecipe = async () =>{
   .then (response => response.json())
   .then (data =>{
     console.log (data.recipe);
-  }) 
-  .catch (error => console.log (error)); 
 
-}
+/*
+const fetchRecipe = async () =>{
+  try{
+    const response = await fetch(recipeUrl+ '/' + crId);
+    const data = await response.json ();
+    console.log (data.recipe);
+ */
+ 
 
-fetchRecipe ();
-
-
-
-
-innerHTML = `  <div class="box" id="srContainer">
+const recipeContainer = document.getElementById("recipeBox");
+recipeContainer.innerHTML = `<div class="recipeBox" id="srContainer">
 <section class="sect1" id="sect1">
   <div class="titleContainer" id="titleContainer">
     <div class="titleInfo" id="titleInfo" >
@@ -96,115 +97,13 @@ innerHTML = `  <div class="box" id="srContainer">
   <span class="iconSearch" id="iconSearch"></span>
 </div>
 </div>
+`; 
+}) 
+.catch (error => console.log (error)); 
 
-
-
-` 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*
-   const srDetails = async () =>{
-    await fetch(recipeUrl)
-    .then (response => response.json())
-    .then (data =>{ }
-    }
-*/
-
- 
-
-/*
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const crId = urlParams.get('rid')
-console.log(crId);
-*/
- 
- 
- 
- 
- /*
- async function fetchSpecRecipe() {
-    try {
-      const responses = await Promise.all(recipesUrl.map(recipesUrl => fetch(recipesUrl)));
-      const data = await Promise.all(responses.map(response => response.json()));
-  
-      data.forEach((responseData, index) => {
-        console.log(`Data from ${recipesUrl[index]}:`, responseData);
-        // Process the data as needed
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  
-  fetchSpecRecipe();
-
-
-  const blogPost = document.querySelector(".blog");
-const modalImg = document.querySelector(".modal-img")
-
-const urlParams = new URLSearchParams(document.location.search);
-const id = urlParams.get("id");
-
-
-
-async function getBlogDetailed() {
-      const url = `https://blissfulnirvana.simplygreat.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
-      const response = await fetch(url);
-      const results = await response.json();
-      const blog = results;
-      const featuredMedia = blog._embedded["wp:featuredmedia"][0];
-      const imageUrl = featuredMedia.media_details.sizes.medium.source_url;
-      const altText = featuredMedia.alt_text;
-      
-    blogPost.innerHTML = "";
-    console.log(blog);
-  
-    const newPageTitle = `Blissful Nirvana | ${blog.title.rendered}`;
-    document.title = newPageTitle;
-  
-  blogPost.innerHTML = `<h2>${blog.title.rendered}</h2><div class="sp_blog"><div><img src="${imageUrl}" alt="${altText}" class="img"></div><div><p>${blog.content.rendered}</p></div></div>`;
-
-// Reference for modal image: https://www.youtube.com/watch?v=QghhoJBdw7A
-
-  modalImg.innerHTML = `<span>&times;</span><img src=${imageUrl} class="img_modal">`;
-
-  document.querySelector(".sp_blog img").onclick = () => {
-    document.querySelector(".modal-img").style.display = "block";
-  }
-
-  document.querySelector(".modal-img span").onclick = () => {
-    document.querySelector(".modal-img").style.display = "none";
-  }
 }
 
-getBlogDetailed();
-*/
+fetchRecipe ();
 
 
+/*--- I can see my specific recipe getting loaded -- it apears in the adress (the specific Id) --- but the recipe doesn't show  in the specific recipe */
