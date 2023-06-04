@@ -107,30 +107,7 @@ function createHTML (postdata){
 }
 
 
-
-
-
-async function getJokes(url, joketype){
-    const response = await fetch(url);
-    const jokes = await response.json();
-    jokesContainer.innerHTML = "";
-    jokes.forEach(function(joke) {
-        if(joke.type == joketype)
-        {
-            jokesContainer.innerHTML += ` <div class="jokes-setup"><h2>${joke.setup}</h2>
-            <div class="jokes-type"><h2>Joke type: ${joke.type}</h2>
-            <a href="joke.html?id=${joke.id}" class="showhideBtn">
-            <button class="showhideBtn">Punchline<button></a>
-            </div>
-            <hr>
-            `;
-        }
-    })
-};
-
-getJokes(url, "programming");
-
-
+/-----  get Api by function .then ----- 
 
 function fetchAPI (){
     then (response => response.json())
@@ -174,20 +151,6 @@ w.document.write(table);
 make_table()
 
 
-- gives the info to the console. 
-
-function fetchAPI (){
-    then (response => response.json())
-    .then (data =>{
-        console.log (data);
-    })
-    .catch (error =>{
-        console.error (error);
-    })
-}
-
-fetchAPI(); 
-
 
 
 get data from console: 
@@ -203,28 +166,6 @@ async function getxxx(){
 
 getxxx(); 
 
-
-getting the objets from console: 
-const url=""; 
- 
-async function getxxx(){
-    const response= await fecth(url); 
-    const data = await response.json();
-    
-    const {object, object2} = data; 
-
-    document.getElementById ('obj1').textContent = object;  
-    document.getElementById ('obj2').textContent= object2;
-    console.log (object); 
-     console.log (object2); 
-}
-
-getxxx(); 
-
-In the HTML-- write : 
-  <div><span id="obj1"></span><div> (this could be a h/p/osv)
- <div><span id="obj2"></span><div> (this could be a h/p/osv)
-*
 
 
 creating HTML to get in the page. here you can insert as much html as needed for getting the info in html. 
@@ -345,62 +286,8 @@ fetch('https://goodfoodgoodmood.learnbydoing.online/wp-json/wp/v2/posts?slug=you
     console.log ('Error:', error);
     })'
 
-    something here?? 
-
-    function displayPost(data) {
-
-    const xxxName = data.title.rendered.split(" ")[0];
-
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = data.content.rendered;
-    const imgEl = tempDiv.querySelector("img");
-    const src = imgEl ? imgEl.getAttribute("src") : null;
-
-    const ps = tempDiv.getElementsByTagName("p");
-    const pText = Array.from(ps).map(p => p.innerHTML).join(" ");
-
-    const fetchedPost = `
-        <h1 class="xxxx-spes-title normal-heading">
-        lorem ipsum  - ${xxxName}</h1>
-        <div class="xxx-posts-img xxxt-spes-img">
-        <img src="${src}" alt="Bilde av r">
-        </div>
-        <p class="katt-spes-text">${pText}</p>
-        `
-        ;
-
-    spesContainer.innerHTML += fetchedPost;
-
-    const catgArr = data.categories;
-    const catgProm = catgArr.map((catgId) => getCategory(catgId));
-
-    Promise.all(catgProm)
-        .then((catgs) => {
-            const fetchedCatgs = `
-                <div class="catg-wrapper">
-                    ${catgs.map((catg) => `
-                <div class="catpaw-symbol"></div>
-                <div class="categories">
-                    <p>${catg}</p>
-                </div>
-            `).join("")}
-            </div>
-            `
-            spesContainer.innerHTML += fetchedCatgs;
-        })
-        .catch((error) => console.error(error));
-};
-
-function getCategory(catgId) {
-    return fetch(CATG_API + "/" + catgId)
-        .then((res) => res.json())
-        .then((data) => {
-            const catgDesc = data.description;
-            return catgDesc;
-        })
-        .catch((error) => console.error(error));
-};
 
 
-fetchAPI();
+ 
+
 
