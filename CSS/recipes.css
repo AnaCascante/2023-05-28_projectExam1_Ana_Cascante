@@ -1,12 +1,13 @@
 .recipeContainer {
-    display: flex;
+    display: ;
     margin-bottom: 10px;
     margin-top: 50px;
   }
 
   .recipeImage {
     flex-basis: 30%;
-    max-width: 100%;
+    width: 200px;
+    height: 20px;
     height: auto;
     margin-left: 50px;
   }
@@ -14,12 +15,14 @@
   .recipeInfo {
     flex-basis: 70%;
     padding-left: 10px;
+    display: flex; 
   }
 
   .recipeTitle {
     font-size: 20px;
     font-weight: bold;
-    margin-top: 0;
+    margin-top: 0 40px;
+    padding: 20px;
     font-family: 'Work Sans', sans-serif;
   }
 
