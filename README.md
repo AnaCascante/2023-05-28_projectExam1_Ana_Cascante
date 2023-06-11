@@ -1,7 +1,7 @@
 
 # Good food good mood
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](<img/good food good mood-biglogo.png>)
 
 This is the project Exam 1, this is the last exam for the first year study Front-end development in Noroff university. 
 
