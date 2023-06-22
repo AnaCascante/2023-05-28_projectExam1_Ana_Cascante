@@ -73,7 +73,9 @@ Those are the tech stacks used to built this project
 ### Installing
 
 
-Here is a link to my project in Github: https://github.com/AnaCascante/2023-05-28_projectExam1_resit_Ana_Cascante.git 
+Here is a link to my project in Github:
+```$ git clone https://github.com/AnaCascante/2023-05-28_projectExam1_resit_Ana_Cascante.git```
+ 
 And a link to the livedemo side: https://remarkable-chaja-3068ed.netlify.app
 
 
