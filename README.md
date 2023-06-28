@@ -32,8 +32,10 @@ Those are the tech stacks used to built this project
 
 Here is a link to my project in Github:
 ```$ git clone https://github.com/AnaCascante/2023-05-28_projectExam1_resit_Ana_Cascante.git```
+
+## Visit the side
  
-And a link to the livedemo side: https://remarkable-chaja-3068ed.netlify.app
+Link to the livedemo side: https://remarkable-chaja-3068ed.netlify.app
 
 
 ## Contact
