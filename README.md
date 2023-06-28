@@ -40,7 +40,7 @@ And a link to the livedemo side: https://remarkable-chaja-3068ed.netlify.app
 
 github: https://github.com/AnaCascante
 
-linkedin: https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile
+linkedin: https://www.linkedin.com/in/ana-cascante-de-quadras-4301521a/
 
 
 ## Acknowledgments
